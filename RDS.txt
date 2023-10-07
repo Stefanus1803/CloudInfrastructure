@@ -1,0 +1,11 @@
+mysqldump -u stefanus -p wordpress > /home/dbbackup/
+
+
+
+
+mysql -u user -h database_server_ip -p
+mysql -u stefanus -h db-wordpress.ccrisry1qwbf.us-east-1.rds.amazonaws.com -p
+
+
+$ mysql -u [uname] -p [pass] [db_to_restore] < [backupfile.sql]
+mysql -u admin -p wordpress -h db-wordpress.ccrisry1qwbf.us-east-1.rds.amazonaws.com < backupbaru.sql

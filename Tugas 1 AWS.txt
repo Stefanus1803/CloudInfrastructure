@@ -1,0 +1,81 @@
+sudo yum update && sudo yum upgrade (untuk mengupdate dan upgrade)
+
+sudo yum install httpd (untuk install web server biar ip kebaca di internet)
+
+sudo systemctl enable httpd (agar tidak menghidupkan lagi)
+sudo systemctl start httpd
+sudo systemctl status httpd
+sudo yum install mariadb105-server (untuk install database server)
+sudo systemctl enable mariadb (agar tidak menghidupkan lagi)
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+
+sudo mysql ( untuk masuk ke databasenya)
+
+CREATE DATABASE wordpress;
+CREATE USER 'admin' IDENTIFIED  BY '12345678';
+GRANT ALL ON wordpress.* TO admin; (untuk memberikan semua hak dan akses ke user admin untuk semua tabel di database wordpress)
+
+exit
+sudo yum install php php-mysqli (untuk install php dan modul php untuk wordpress)
+
+php -v (untuk mengecek sudah terinstall atau belum)
+
+sudo systemctl restart httpd (untuk restart)
+cd /var/www/html (change direktori ke)
+
+rm -rf index.html (unutk menghapus)(karena jika ada index.html dan index.php yang terbaca html duluan)
+
+sudo wget https://wordpress.org/latest.tar.gz (untuk download wordpress rar)
+
+sudo tar -xvzf latest.tar.gz (sintaks untuk ekstrak file tar.gz)
+
+cd wordpress (change dir)
+
+sudo mv * ..(unutk memindah semua file yang ada di folder wordpress ke folder sebelumnya)
+
+ls -a (list semua yang ada di dir pake -a biar keliatan kosong)
+
+cd ..(ini untuk balik 1 folder)
+
+ls (list semua yang ada)
+
+sudo rm -rf wordpress/ latest.tar.gz (unutk remove)
+
+ls (list semua yang ada)
+
+chmod 777 -R /var/www/html/
+
+-- lanjut buka IP dari browser
+-- Isi Nama Database, User Database, Password Database, Url Database, Table Prefix
+-- Jika disuruh membuat file wp-config.php
+-- Ke terminal lalu ketik "sudo nano wp-config.php"
+-- Paste config yang telah dibuat di wordpress ke wp-config.php
+-- Jika sudah selesai, maka tekan CTRL + X lalu Y lalu enter
+-- Lalu isi Site Title, Username, Password, Email
+-- Login
+-- Cari tema dan isi konten WordPress anda
+
+
+
+Instant User Data:
+sudo yum update && sudo yum upgrade -y
+sudo yum install httpd -y
+sudo systemctl enable httpd
+sudo systemctl start httpd
+sudo systemctl status httpd
+sudo yum install mariadb105-server -y
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+sudo mysql
+CREATE DATABASE wordpress;
+CREATE USER 'stefanus' IDENTIFIED  BY '1sampai8';
+GRANT ALL ON wordpress.* TO stefanus;
+exit
+sudo yum install php php-mysqli -y
+sudo systemctl restart httpd
+cd /var/www/html
+rm -rf index.html
+sudo wget https://wordpress.org/latest.tar.gz
+sudo tar -xvzf latest.tar.gz
