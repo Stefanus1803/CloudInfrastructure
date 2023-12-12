@@ -23,7 +23,8 @@ yum update -y
 yum install -y httpd
 systemctl start httpd
 systemctl enable httpd
-yum install php php-mysql -y
+yum install php -y
+yum install php php-mysqli -y
 systemctl restart httpd
 yum install -y mariadb105-server
 systemctl start mariadb
