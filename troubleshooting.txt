@@ -1,4 +1,4 @@
-Masalah lemot:
+Masalah lemot(diletakan pada wp-config.php):
 define( 'WP_HOME', 'http://52.86.131.101 );
 define( 'WP_SITEURL', 'http://52.86.131.101' );
 
@@ -7,18 +7,10 @@ chown 755 -R /var/www/html/
 chmod 755 -R /var/www/html/ atau 777(alternatif)
 
 
-wordpressBlog pw: akunbelajar ip public lama : 54.80.144.13
-
-DB Wordpress:
-stefanus, 1sampai8
-
-User Login Wordpress
-Stefanus
-kuliahinformatika
-
-Cek IP Host wordpress:
-https://mike632t.wordpress.com/2021/03/22/changing-wordpress-ip-address/
-
+Settings kalo wordpress nya lemot karena ganti IP nya:
 SELECT * FROM wp_options WHERE option_name IN('siteurl','home');
 UPDATE wp_options SET option_value='http://54.197.62.220' WHERE option_name = 'siteurl';
 UPDATE wp_options SET option_value='http://54.197.62.220' WHERE option_name = 'home';
+
+Cek IP Host wordpress:
+https://mike632t.wordpress.com/2021/03/22/changing-wordpress-ip-address/
