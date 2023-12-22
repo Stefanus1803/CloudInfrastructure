@@ -1,16 +1,24 @@
 Masalah lemot(diletakan pada wp-config.php):
+-----------------------------------------------------------------
 define( 'WP_HOME', 'http://52.86.131.101 );
 define( 'WP_SITEURL', 'http://52.86.131.101' );
 
 Masalah instal plug in & tema:
+-----------------------------------------------------------------
 chown 755 -R /var/www/html/
 chmod 755 -R /var/www/html/ atau 777(alternatif)
 
-
-Settings kalo wordpress nya lemot karena ganti IP nya:
+Cek IP Host wordpress:
+-----------------------------------------------------------------
 SELECT * FROM wp_options WHERE option_name IN('siteurl','home');
 UPDATE wp_options SET option_value='http://54.197.62.220' WHERE option_name = 'siteurl';
 UPDATE wp_options SET option_value='http://54.197.62.220' WHERE option_name = 'home';
+-----------------------------------------------------------------
+sumber: https://mike632t.wordpress.com/2021/03/22/changing-wordpress-ip-address/
 
-Cek IP Host wordpress:
-https://mike632t.wordpress.com/2021/03/22/changing-wordpress-ip-address/
+Define URL WordPress :
+-----------------------------------------------------------------
+define( 'WP_HOME', 'http://example.com' );
+define( 'WP_SITEURL', 'http://example.com' );
+-----------------------------------------------------------------
+sumber: https://wordpress.org/documentation/article/changing-the-site-url/
