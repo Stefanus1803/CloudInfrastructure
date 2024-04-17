@@ -5,11 +5,13 @@ yum install -y httpd
 systemctl start httpd
 systemctl enable httpd
 yum install php php-mysqli -y
+yum install mariadb105-server -y
+systemctl start mariadb
+systemctl enable mariadb
 systemctl restart httpd
 rm -rf /var/www/html
 cd /var/www/
 mkdir html
-Copy NFS attach with DNS and point to /var/www/html
+mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0b26b24bc90fc3fe9.efs.us-east-1.amazonaws.com:/ /var/www/html
 
-#contoh copy EFS nya:
-#mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0b26b24bc90fc3fe9.efs.us-east-1.amazonaws.com:/ /var/www/html
+Copy NFS attach with DNS and point to /var/www/html
